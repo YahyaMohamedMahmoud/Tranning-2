@@ -1,56 +1,308 @@
+.mt-200 {
+  margin-top: 200px;
+}
+.mt-100 {
+  margin-top: 100px;
+}
+.mb-100 {
+  margin-bottom: 100px;
+}
+
 body {
-    font-family: "PP Gatwick Jet Extralight";
-    overflow-x: hidden;
+  font-family: "PP Gatwick Jet Extralight";
+  overflow-x: hidden;
 }
 
 .hero .videos-frames {
-    position: relative;
+  position: relative;
 }
-.text-color{
-    color: white;
-     margin-top: 0;
-    margin-bottom: 0;
+.text-color {
+  color: white;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-
 
 .hero .hero-text {
-    position: absolute;
-    /* width: 100%; */
-    top: 43%;
-    left: 25%;
-    /* transform: translate(-50%, -50%); */
-    text-align: center;
-    overflow: hidden;
-    /* display: none; */
+  position: absolute;
+  top: 43%;
+  left: 25%;
+  text-align: center;
+  overflow: hidden;
 }
-.hero .hero-text h2{
-    font-size: 47px;
-    padding-bottom: 8px;
+.hero .hero-text h2 {
+  font-size: 47px;
+  padding-bottom: 8px;
 }
 .hero .hero-text a {
-      font-family: "Source Sans 3", sans-serif;
-    text-transform: uppercase;
-    font-size: 20px;
-    border-bottom: 2px solid white;
-    letter-spacing: 3px;
-    font-weight: 600;
+  font-family: "Source Sans 3", sans-serif;
+  text-transform: uppercase;
+  font-size: 20px;
+  border-bottom: 2px solid white;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 .hero .hero-text2 {
-    position: absolute;
-    bottom: 13%;
-    left: 6%;
-    overflow: hidden;
+  position: absolute;
+  bottom: 13%;
+  left: 6%;
+  overflow: hidden;
 }
 .hero h2 {
-    font-size: 46px;
-    line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: 0;
+  font-size: 46px;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 .hero .hero-text3 {
-    position: absolute;
-    bottom: 13%;
-    right: 6%;
-    overflow: hidden;
+  position: absolute;
+  bottom: 13%;
+  right: 6%;
+  overflow: hidden;
+}
+.slides {
+  width: 94%;
+  margin: auto;
+  position: relative;
+  height: 94vh; /* قللنا من 100vh */
+  min-height: 700px;
+  perspective: 1500px;
+}
 
+.slides .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 56px;
+  padding: 55px 55px 60px 55px;
+  overflow: hidden;
+  will-change: transform;
+  transform-style: preserve-3d; /* للـ 3D */
+  backface-visibility: hidden; /* علشان مايبقاش في glitches */
+  margin: 30px 0;
+}
+
+/* slider-1 تحت خالص */
+.slides .slider-1 {
+  background-image: url(../img/686e78a58d1175bc42a70954_elica-yard-bg\ 2.avif);
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* slider-2 فوقها */
+.slides .slider-2 {
+  background-color: #1d3e57;
+  z-index: 2;
+}
+
+/* slider-3 فوق الكل */
+.slides .slider-3 {
+  background-color: #02737c;
+  z-index: 3;
+}
+
+.slides .slider-1::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.521);
+  border-radius: 56px;
+  z-index: 0;
+}
+
+.slides .slide .content-top,
+.slides .slide .content-bottom {
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+
+.slides .slide .content-top h2 {
+  font-size: 42px;
+  line-height: 1.2;
+}
+
+.slides .slider-2 .content-top h2 {
+  font-size: 56px;
+}
+
+.slides .slide .content-bottom img {
+  width: 133px;
+}
+
+.slides .slide .content-bottom p {
+  width: 420px;
+  font-size: 28px;
+  font-family: "Source Sans 3", sans-serif;
+  line-height: 1.3;
+}
+
+.slides .slide .content-bottom .images {
+  position: relative;
+  width: 75%;
+  height: 100%;
+}
+
+.slides .slide .content-bottom .images video {
+  aspect-ratio: 3 / 3;
+  width: 400px;
+  object-fit: fill;
+  height: 48vh;
+  position: absolute;
+  bottom: -38%;
+  left: 0;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.slides .slide .content-bottom .images .image1 {
+  border-radius: 1em;
+  width: 37vh;
+  position: absolute;
+  top: -100%;
+  left: 30%;
+  overflow: hidden;
+}
+
+.slides .slide .content-bottom .images .image2 {
+  width: 30vh;
+  bottom: 140%;
+  left: 56%;
+  position: relative;
+  z-index: 3;
+  border-radius: 1em;
+}
+.slides-wrapper {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.slides .slider-2,
+.slides .slider-3 {
+  opacity: 0;
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero .hero-text {
+    width: 100% !important;
+  }
+  .hero .hero-text h2 {
+    font-size: 34px;
+  }
+  .hero h2 {
+    font-size: 35px;
+  }
+  .slides .slide .content-top h2 {
+    font-size: 34px;
+  }
+  .slides .slide {
+    border-radius: 28px;
+    padding: 35px;
+    margin: 5px 0;
+  }
+  .slides .slider-1::after {
+    border-radius: 28px;
+  }
+  .slides .slide .content-bottom p {
+    font-size: 24px;
+  }
+  .slides .slider-2 .content-bottom {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+  }
+  .slides .slider-3 .content-bottom {
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+  }
+  .slides .slide .content-bottom .images video {
+    width: 250px;
+    height: 28vh;
+    bottom: 56%;
+    left: 0%;
+    border-radius: 15px;
+  }
+  .slides .slide .content-bottom .images {
+    width: 75%;
+    height: 100px;
+  }
+  .slides .slide .content-bottom .images .image1 {
+    width: 26vh;
+    top: -250%;
+    left: 40%;
+  }
+  .slides .slide .content-bottom .images .image2 {
+    width: 25vh;
+    bottom: 330%;
+    left: 77%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero .hero-text {
+    width: 100% !important;
+  }
+  .hero h2 {
+    font-size: 32px;
+  }
+  .hero .hero-text h2 {
+    font-size: 34px;
+  }
+  .hero .videos-frames canvas {
+    width: 100% !important;
+  }
+  .slides .slide {
+    border-radius: 18px;
+    padding: 23px;
+    margin: 5px 0;
+  }
+  .slides .slider-1::after {
+    border-radius: 18px;
+  }
+  .slides .slide .content-top h2 {
+    font-size: 24px;
+  }
+  .slides .slide .content-bottom p {
+    font-size: 20px;
+    margin: 36px 0;
+  }
+  .slides .slide .content-bottom .images video {
+    height: 25vh;
+    bottom: 76%;
+    left: -20%;
+    border-radius: 15px;
+  }
+  .slides .slide .content-bottom .images .image2 {
+    display: none;
+  }
+  .slides .slider-2 .content-bottom {
+    width: 100%;
+    flex-direction: column;
+  }
+  .slides .slider-3 .content-bottom {
+    width: 100%;
+    flex-direction: column;
+  }
+  .slides .slider-2 .content-bottom p {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .slides .slider-3 .content-bottom p {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .slides .slide .content-bottom .images {
+    width: 75%;
+    height: 100px;
+  }
+  .slides .slide .content-bottom .images .image1 {
+    width: 26vh;
+    top: -250%;
+    left: 30%;
+  }
+  .hero .hero-text3 {
+    right: 16%;
+  }
 }
