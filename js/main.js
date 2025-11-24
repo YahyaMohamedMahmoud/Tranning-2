@@ -177,97 +177,90 @@ gsap.to(frame, {
 
 
 
-// تأكد إنك حاطط GSAP و ScrollTrigger في الـ HTML:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-// تأكد إنك حاطط GSAP و ScrollTrigger في الـ HTML:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+// gsap.registerPlugin(ScrollTrigger);
 
-gsap.registerPlugin(ScrollTrigger);
+// // الـ timeline الرئيسية
+// const tl = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".slides",
+//     start: "top top",
+//     end: "bottom+=100% top",
+//     scrub: 1,
+//     pin: true,
+//     anticipatePin: 1,
+//   }
+// });
 
-// الـ timeline الرئيسية
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".slides",
-    start: "top top",
-    end: "bottom+=100% top",
-    scrub: 1,
-    pin: true,
-    anticipatePin: 1,
-  }
-});
+// // =====================================
+// // 1) SLIDER 1 OUT (3D FLIP)
+// // =====================================
 
-// =====================================
-// 1) SLIDER 1 OUT (3D FLIP)
-// =====================================
-
-tl.to(".slider-1", {
-  rotateX: 25,
-  rotateY: 8,
-  scale: 0.9,
-  opacity: 0,
-  transformOrigin: "center top",
-  ease: "none",
-  duration: 1
-}, 0);
+// tl.to(".slider-1", {
+//   rotateX: 25,
+//   rotateY: 8,
+//   scale: 0.9,
+//   opacity: 0,
+//   transformOrigin: "center top",
+//   ease: "none",
+//   duration: 1
+// }, 0);
 
 
-// =====================================
-// 2) SLIDER 2 ENTER + SHOW
-// =====================================
+// // =====================================
+// // 2) SLIDER 2 ENTER + SHOW
+// // =====================================
 
-// نخليه يظهر أول ما يبدأ دوره
-tl.to(".slider-2", {
-  opacity: 1,
-  duration: 0.1,
-  ease: "none"
-}, 0);
+// // نخليه يظهر أول ما يبدأ دوره
+// tl.to(".slider-2", {
+//   opacity: 1,
+//   duration: 0.1,
+//   ease: "none"
+// }, 0);
 
-// الأنيميشن الأساسي بتاع دخوله
-tl.fromTo(".slider-2", 
-  { yPercent: 100 },
-  { 
-    yPercent: 0,
-    ease: "none",
-    duration: 1
-  }, 0
-);
-
-
-// =====================================
-// 3) SLIDER 2 OUT (3D FLIP)
-// =====================================
-
-tl.to(".slider-2", {
-  rotateX: 25,
-  rotateY: 8,
-  scale: 0.9,
-  opacity: 0,
-  transformOrigin: "center top",
-  ease: "none",
-  duration: 1
-}, 1);
+// // الأنيميشن الأساسي بتاع دخوله
+// tl.fromTo(".slider-2", 
+//   { yPercent: 100 },
+//   { 
+//     yPercent: 0,
+//     ease: "none",
+//     duration: 1
+//   }, 0
+// );
 
 
-// =====================================
-// 4) SLIDER 3 ENTER + SHOW
-// =====================================
+// // =====================================
+// // 3) SLIDER 2 OUT (3D FLIP)
+// // =====================================
 
-// يظهر لحظة بداية دخوله
-tl.to(".slider-3", {
-  opacity: 1,
-  duration: 0.1,
-  ease: "none"
-}, 1);
+// tl.to(".slider-2", {
+//   rotateX: 25,
+//   rotateY: 8,
+//   scale: 0.9,
+//   opacity: 0,
+//   transformOrigin: "center top",
+//   ease: "none",
+//   duration: 1
+// }, 1);
 
-// دخوله من تحت
-tl.fromTo(".slider-3",
-  { yPercent: 100 },
-  {
-    yPercent: 0,
-    ease: "none",
-    duration: 1
-  }, 1
-);
+
+// // =====================================
+// // 4) SLIDER 3 ENTER + SHOW
+// // =====================================
+
+// // يظهر لحظة بداية دخوله
+// tl.to(".slider-3", {
+//   opacity: 1,
+//   duration: 0.1,
+//   ease: "none"
+// }, 1);
+
+// // دخوله من تحت
+// tl.fromTo(".slider-3",
+//   { yPercent: 100 },
+//   {
+//     yPercent: 0,
+//     ease: "none",
+//     duration: 1
+//   }, 1
+// );
