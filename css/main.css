@@ -183,6 +183,34 @@ body {
   margin-bottom: 100px;
 }
 
+/* .flower-section {
+  height: 300vh; 
+  position: relative;
+}
+
+.flower-container {
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+}
+
+.flower-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  will-change: transform;
+}
+
+.flower-img img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+} */
+
 @media screen and (max-width: 768px) {
   .hero .hero-text {
     width: 100% !important;
